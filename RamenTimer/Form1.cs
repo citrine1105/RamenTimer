@@ -25,14 +25,15 @@ namespace RamenTimer
         private void button1_Click(object sender, EventArgs e)
         {
             progressBar1.Value = 0;
-            label2.Text = progressBar1.Maximum.ToString();
+            int starttime = progressBar1.Maximum / 2;
+            label2.Text = starttime.ToString();
             timer1.Enabled = true;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             progressBar1.Value++;
-            label2.Text = Convert.ToString(progressBar1.Maximum - progressBar1.Value);
+            label2.Text = Convert.ToString((progressBar1.Maximum  - progressBar1.Value) / 2);
             if (progressBar1.Value == progressBar1.Maximum)
             {
                 timer1.Enabled = false;
