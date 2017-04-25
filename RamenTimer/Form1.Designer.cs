@@ -41,9 +41,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(14, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -51,18 +51,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(120, 50);
+            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(156, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 12);
+            this.label1.Size = new System.Drawing.Size(72, 38);
             this.label1.TabIndex = 1;
             this.label1.Text = "あと";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(162, 50);
+            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(234, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(11, 12);
+            this.label2.Size = new System.Drawing.Size(108, 54);
             this.label2.TabIndex = 2;
             this.label2.Text = "0";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -70,38 +71,42 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(204, 50);
+            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label3.Location = new System.Drawing.Point(348, 77);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 12);
+            this.label3.Size = new System.Drawing.Size(55, 38);
             this.label3.TabIndex = 3;
             this.label3.Text = "秒";
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(120, 13);
+            this.progressBar1.Location = new System.Drawing.Point(120, 12);
+            this.progressBar1.Maximum = 180;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 23);
+            this.progressBar1.Size = new System.Drawing.Size(202, 23);
             this.progressBar1.TabIndex = 4;
             // 
             // timer1
             // 
             this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Location = new System.Drawing.Point(227, 13);
+            this.button1.Location = new System.Drawing.Point(328, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
+            this.button1.Text = "スタート";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 126);
+            this.ClientSize = new System.Drawing.Size(415, 124);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label3);
@@ -112,6 +117,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "ラーメンタイマー";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
