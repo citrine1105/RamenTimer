@@ -23,8 +23,7 @@ namespace RamenTimer
             label7.Font = SystemFonts.MessageBoxFont;
             label8.Font = SystemFonts.MessageBoxFont;
             button1.Font = SystemFonts.MessageBoxFont;
-            textBox1.Text = "3";
-            textBox1.Font = SystemFonts.MessageBoxFont;
+            numericUpDown1.Font = SystemFonts.MessageBoxFont;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,18 +34,18 @@ namespace RamenTimer
                 label2.Text = "0";
                 label4.Text = "0";
                 timer1.Enabled = false;
-                textBox1.Enabled = true;
+                numericUpDown1.Enabled = true;
                 button1.Text = "スタート";
             }
             else
             {
                 progressBar1.Value = 0;
-                progressBar1.Maximum = int.Parse(textBox1.Text) * 60 * 2;   // 時間設定
+                progressBar1.Maximum = decimal.ToInt32(numericUpDown1.Value) * 60 * 2;   // 時間設定
                 int starttime = progressBar1.Maximum / 2;
                 label2.Text = string.Format("{0}", starttime / 60);
                 label4.Text = string.Format("{0}", starttime % 60);
                 timer1.Enabled = true;
-                textBox1.Enabled = false;
+                numericUpDown1.Enabled = false;
                 button1.Text = "ストップ";
             }
         }
@@ -83,7 +82,7 @@ namespace RamenTimer
                 timer1.Enabled = false;
                 pictureBox1.Image = Image.FromFile("./images/3_1.png");
                 MessageBox.Show("いただきます", "ラーメンタイマー", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                textBox1.Enabled = true;
+                numericUpDown1.Enabled = true;
                 button1.Text = "スタート";
             }
         }
